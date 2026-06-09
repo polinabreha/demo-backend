@@ -54,4 +54,11 @@ public class InternshipService {
     public void deleteInternship(Long id) {
         internshipRepository.deleteById(id);
     }
+
+
+    public List<Internship> getInternshipByLocation(String location) {
+        return internshipRepository.findAll().stream()
+                .filter(i -> i.getLocation().equalsIgnoreCase(location))
+                .collect(Collectors.toList());
+    }
 }
