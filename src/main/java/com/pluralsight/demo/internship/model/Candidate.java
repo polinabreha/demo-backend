@@ -2,8 +2,12 @@ package com.pluralsight.demo.internship.model;
 
 import jakarta.persistence.*;
 
+
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "candidates")
+
 public class Candidate {
 
     @Id
@@ -15,6 +19,10 @@ public class Candidate {
     private String email;
     
     private String fieldOfStudy;
+
+    private LocalDateTime registeredAt;
+
+    private boolean visible;
 
     // Constructors
     public Candidate() {
@@ -57,5 +65,21 @@ public class Candidate {
 
     public void setFieldOfStudy(String fieldOfStudy) {
         this.fieldOfStudy = fieldOfStudy;
+    }
+
+    public LocalDateTime getRegisteredAt() {
+        return registeredAt;
+    }
+
+    public void setRegisteredAt(LocalDateTime registeredAt) {
+        this.registeredAt = registeredAt;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 }
